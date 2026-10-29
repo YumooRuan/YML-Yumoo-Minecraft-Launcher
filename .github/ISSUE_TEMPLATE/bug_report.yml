@@ -1,0 +1,62 @@
+name: Bug report
+description: 报告启动器问题
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        请不要粘贴管理员密码、访问令牌或包含个人信息的完整日志。
+  - type: input
+    id: launcher
+    attributes:
+      label: 启动器版本
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: game
+    attributes:
+      label: Minecraft / 加载器版本
+      placeholder: "1.20.1 Forge 47.4.10 / Fabric 0.16.0"
+    validations:
+      required: true
+  - type: dropdown
+    id: source
+    attributes:
+      label: 下载源
+      options:
+        - 自动选择
+        - 官方
+        - BMCLAPI
+        - 阿里云
+        - 清华 TUNA
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤
+      placeholder: |
+        1. 打开...
+        2. 点击...
+        3. 出现...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望结果
+  - type: textarea
+    id: logs
+    attributes:
+      label: 日志 / 诊断报告
+      description: 可附上 `yml-report-*.txt` 或 `latest.log` 的相关片段，请先脱敏。
+      render: text
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: 确认
+      options:
+        - label: 我已搜索现有 Issue，没有重复报告
+          required: true
+        - label: 我核对过下载文件的 SHA-256
+          required: false
